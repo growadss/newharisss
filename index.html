@@ -1,110 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trader Harish</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Harish Trading Academy — free stock market education community on Telegram.">
+<title>Harish Trading Academy | Official Community</title>
 
-    <!-- Meta Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1388596093440812');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1388596093440812&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+
+body{
+  min-height:100vh;
+  min-height:100dvh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px 16px;
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at 12% 12%,rgba(20,184,166,.28),transparent 45%),
+    radial-gradient(circle at 90% 15%,rgba(245,158,11,.22),transparent 45%),
+    #061412;
+  color:#eafff8;
+}
+
+.wrap{width:100%;max-width:400px}
+
+.card{
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 28px 64px rgba(0,0,0,.55);
+}
+
+.top-glow{
+  height:4px;
+  background:linear-gradient(90deg,#14b8a6,#f59e0b,#14b8a6);
+  background-size:200% 100%;
+  animation:shift 3s linear infinite;
+}
+@keyframes shift{0%{background-position:0% 0%}100%{background-position:200% 0%}}
+
+.hero{text-align:center;padding:32px 22px 20px}
+
+.avatar-ring{
+  width:88px;height:88px;
+  border-radius:50%;
+  margin:0 auto 14px;
+  padding:3px;
+  background:conic-gradient(from 0deg,#14b8a6,#f59e0b,#facc15,#14b8a6);
+}
+.avatar{
+  width:100%;height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  background:#0c2622;
+  border:3px solid #061412;
+  display:block;
+}
+
+.verified-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  background:rgba(20,184,166,.12);
+  border:1px solid rgba(20,184,166,.35);
+  color:#5eead4;
+  font-size:9.5px;
+  font-weight:800;
+  letter-spacing:.4px;
+  padding:5px 12px;
+  border-radius:20px;
+  margin-bottom:12px;
+}
+
+h1{font-size:21px;font-weight:900;letter-spacing:.2px;color:#fff;margin-bottom:6px}
+.sub{font-size:12px;color:#a8e6d6;line-height:1.6;max-width:310px;margin:0 auto}
+
+.stat-row{
+  display:flex;gap:10px;
+  padding:0 22px;
+  margin-top:20px;margin-bottom:20px;
+}
+.stat{
+  flex:1;text-align:center;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;
+  padding:12px 6px;
+}
+.stat b{display:block;font-size:14.5px;font-weight:900;color:#5eead4}
+.stat span{display:block;font-size:8.5px;color:#7db8a8;margin-top:3px;letter-spacing:.3px}
+
+.body-pad{padding:0 22px 22px}
+
+.cta{
+  position:relative;
+  display:block;
+  text-decoration:none;
+  text-align:center;
+  padding:17px 14px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#229ed9,#087db5);
+  color:#fff;
+  box-shadow:0 16px 34px rgba(8,125,181,.35),inset 0 1px 0 rgba(255,255,255,.3);
+  border:1px solid rgba(255,255,255,.15);
+}
+.cta:active{transform:scale(.98)}
+.cta-main{position:relative;display:block;font-size:14.5px;font-weight:900}
+.cta-sub{position:relative;display:block;margin-top:4px;font-size:10.5px;color:rgba(255,255,255,.85)}
+
+.timer-line{text-align:center;margin-top:12px;font-size:10px;color:#7db8a8}
+.timer-line b{color:#5eead4}
+
+.feature-list{margin-top:20px}
+.feat-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.feat-row:last-child{border-bottom:none}
+.feat-ic{
+  width:32px;height:32px;
+  flex-shrink:0;
+  border-radius:10px;
+  background:rgba(20,184,166,.12);
+  border:1px solid rgba(20,184,166,.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;
+}
+.feat-text h3{font-size:12px;font-weight:800;color:#eafff8;margin-bottom:1px}
+.feat-text p{font-size:10px;color:#7db8a8;line-height:1.4}
+
+.disclaimer{
+  margin-top:20px;
+  padding-top:15px;
+  border-top:1px solid rgba(255,255,255,.08);
+  font-size:8.5px;
+  line-height:1.65;
+  color:#4a6e63;
+  text-align:center;
+}
+
+.footer{text-align:center;padding:0 22px 22px;font-size:8.5px;color:#345a4f}
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1388596093440812');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1388596093440812&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 </head>
-
 <body>
 
-    <div class="container">
-        <div class="card">
+<div class="wrap">
+  <div class="card">
+    <div class="top-glow"></div>
 
-            <!-- Logo -->
-            <div class="logo">
-                <img src="harish.jpg" alt="Harish Trader">
-            </div>
-
-            <!-- Heading -->
-            <h1>Trade With Harish</h1>
-            <a href="https://t.me/+m4OsEbBRsEphNmQ1" target="_blank" rel="noopener" class="btn cta-btn">
-                Join Telegram
-            </a>
-
-            <!-- Features -->
-            <div class="features">
-                <p>📊 NIFTY · BANKNIFTY · SENSEX</p>
-                <p>✅ DAILY CALLS AVAILABLE</p>
-                <p>⭐ 95% Accuracy</p>
-                <p>🎯 6+ Years Experience</p>
-            </div>
-
-            <!-- CTA -->
-            <a href="https://t.me/+m4OsEbBRsEphNmQ1" target="_blank" rel="noopener" class="btn cta-btn">
-                Join Telegram
-            </a>
-
-            <!-- Auto redirect (koi pixel event nahi) -->
-            <h3>Redirecting in <span id="t">4</span>s...</h3>
-
-            <!-- Disclaimer -->
-            <p class="disclaimer">
-                Disclaimer: This is for educational purposes only. We are not SEBI registered.
-            </p>
-
-        </div>
+    <div class="hero">
+      <div class="avatar-ring">
+        <img src="harish.jpg" class="avatar" alt="Harish Trading Academy" width="82" height="82">
+      </div>
+      <div class="verified-badge">✓ VERIFIED COMMUNITY</div>
+      <h1>HARISH TRADING ACADEMY</h1>
+      <div class="sub">Learn to read the market with discipline — free, structured stock market education.</div>
     </div>
 
-    <script>
-        var TG_LINK = 'https://t.me/+m4OsEbBRsEphNmQ1';
+    <div class="stat-row">
+      <div class="stat"><b>FREE</b><span>NO COST</span></div>
+      <div class="stat"><b>DAILY</b><span>MARKET NOTES</span></div>
+      <div class="stat"><b>100%</b><span>BEGINNER OK</span></div>
+    </div>
 
-        // ---- Subscribe event: sirf CTA click par, ek session me sirf ek baar ----
-        var subscribeFired = false;
-        try {
-            subscribeFired = sessionStorage.getItem('tg_subscribe_fired') === '1';
-        } catch (e) {}
+    <div class="body-pad">
+      <a class="cta" id="telegramBtn" href="https://t.me/+m4OsEbBRsEphNmQ1" rel="noopener noreferrer">
+        <span class="cta-main">JOIN FREE TELEGRAM COMMUNITY</span>
+        <span class="cta-sub">Instant access • 100% free</span>
+      </a>
+      <div class="timer-line">Auto-redirecting in <b><span id="count">30</span>s</b>...</div>
 
-        function fireSubscribeOnce() {
-            if (subscribeFired) return;          // double / repeat click block
-            subscribeFired = true;
-            try { sessionStorage.setItem('tg_subscribe_fired', '1'); } catch (e) {}
+      <div class="feature-list">
+        <div class="feat-row"><div class="feat-ic">📊</div><div class="feat-text"><h3>Daily Market Insights</h3><p>Simple, no-jargon updates every day</p></div></div>
+        <div class="feat-row"><div class="feat-ic">📘</div><div class="feat-text"><h3>Structured Fundamentals</h3><p>Balance sheets, ratios, company health</p></div></div>
+        <div class="feat-row"><div class="feat-ic">🎯</div><div class="feat-text"><h3>Zero to Confident</h3><p>Step-by-step, beginner friendly</p></div></div>
+        <div class="feat-row"><div class="feat-ic">🛡️</div><div class="feat-text"><h3>No Hype, No Shortcuts</h3><p>Honest, education-first approach</p></div></div>
+      </div>
 
-            if (typeof fbq === 'function') {
-                // eventID dedup ke liye (agar baad me Conversions API lagao)
-                var eventId = 'sub_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
-                fbq('track', 'Subscribe', {}, { eventID: eventId });
-            }
-        }
+      <div class="disclaimer">
+        <strong>Disclaimer:</strong> This platform is for educational and informational purposes only. We are not a SEBI-registered investment advisor. Nothing here constitutes financial advice, and no returns are guaranteed. Stock market investments carry risk — please consult a qualified advisor and conduct your own research before investing.
+      </div>
+    </div>
 
-        document.querySelectorAll('.cta-btn').forEach(function (btn) {
-            btn.addEventListener('click', fireSubscribeOnce);
-        });
+    <div class="footer">© 2026 Harish Trading Academy • Educational Community</div>
+  </div>
+</div>
 
-        // ---- Auto redirect: koi event fire nahi hota ----
-        var t = 10;
-        var timerEl = document.getElementById('t');
-        var timer = setInterval(function () {
-            t--;
-            if (t > 0) {
-                timerEl.innerText = t;
-            } else {
-                clearInterval(timer);
-                window.location.href = TG_LINK;
-            }
-        }, 1000);
-    </script>
+<script>
+(function(){
+  var btn = document.getElementById("telegramBtn");
+  var link = "https://t.me/+m4OsEbBRsEphNmQ1";
+  var counter = document.getElementById("count");
+  var time = 30;
+
+  // No preventDefault, no setTimeout — native href navigates instantly
+  // so in-app browsers (Instagram/Facebook) never block it.
+  btn.addEventListener("click", function(){
+    if(window.fbq){
+      fbq('track','Subscribe',{content_name:'Harish Trading Academy Telegram Community'},{eventID:'telegram_subscribe_'+Date.now()});
+    }
+  });
+
+  var t = setInterval(function(){
+    time--;
+    counter.textContent = time;
+    if(time <= 0){
+      clearInterval(t);
+      window.location.href = link;
+    }
+  }, 1000);
+})();
+</script>
 
 </body>
-
 </html>
